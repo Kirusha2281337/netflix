@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script> 
+        $(function(){
+            $("#header").load("../shortcuts/headers.html"); 
+        });
+    </script>
+</head>
+<body>
+    <header id="header" style="background-color: rgb(24,26,27);"></header>
+
+    <div class="scroll"></div>
+
+    <div class="container">
+        <div class="page_1">
+            <img src="../resources/netflix.svg" alt="asdsa" width="800px">
+            <h2>the largest library imaginable to mankind i think swag skibidi toilet style</h2>
+        </div>
+        <template id="tmplt_movie">
+            <div class="page">
+                    <h1 class="name"></h1>
+                    <h2 class="date">Дата показа: </h2>
+                    <h2 class="age">Возрастной рейтинг: </h2>
+                    <h2 class="genre">Жанр: </h2>
+                    <h2 class="description">Синопсис: </h2>
+                    <h2 class="price">Цена билета: </h2>
+            </div>
+        </template>
+    </div>
+    <script src="about.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script> 
+        $(function(){
+            $("#header").load("../shortcuts/headers.html"); 
+        });
+    </script>
+    <link rel="stylesheet" href="afisha.css">
+</head>
+<body>
+    <header id="header"></header>
+
+    <div class="sort">
+        <h3 style="text-align: center;">Получить список с сортировкой по:</h3>
+        <form action="" id="sort_form">
+            <select name="sel_sort">
+                <option value="name">имени</option>
+                <option value="date">дате показа</option>
+                <option value="price">цене</option>
+            </select>
+            <label><input type="checkbox" name="chck_desc">убыванию</label>
+            <input type="submit" id="ent">
+        </form>
+    </div>
+    <div id="afisha"></div>
+
+    <template id="tmplt_afisha">
+        <div class='card'>
+            <img width='fit-content' style='display: flex;' class="img">
+            <div class='info'>
+                <h3 class="name"></h3>
+                <h3 class="date">Дата показа: </h3>
+                <h3 class="age">Возрастной рейтинг: </h3>
+                <h3 class="genre">Жанр: </h3>
+                <h3 class="description">Синопсис: </h3>
+                <h3 class="price">Цена билета: </h3>
+                <button class=btn_movie id=$element[id]>Открыть</button>
+            </div>
+        </div>
+    </template>
+    
+    <script src="afisha.js"></script>
+</body>
+</html>

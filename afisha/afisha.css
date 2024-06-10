@@ -1,0 +1,72 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+    background-color: rgb(24, 26, 27);
+    margin: 0;
+}
+
+.card{
+    width: 42.5vw;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    position: relative;
+    border: beige solid 3px;
+    border-radius:10px;
+    height: 17.5vw;
+    padding: 1vw;
+    transition: 1s;
+    margin:1vw auto ;
+    .description{
+        display: none;
+    }
+}
+.card_full{
+    border:beige solid 3px;
+    border-radius:10px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    padding:10px;
+    position:fixed;
+    z-index: 1;
+    width: 98%;
+    height:96vh;
+    top: 0vw;
+    z-index: 10;
+    margin: auto;
+    .description{
+        display: block;
+    }
+}
+.info{
+    margin-left:30px ;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    button{
+        width: fit-content;
+    }
+    h3{
+        margin-bottom: 0.5vw;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width:25%;
+    margin:auto;
+    text-align: center;
+}
+.sort{
+    margin-bottom:10px;
+    h3{
+        width: 100%;
+        margin: 20px 0px;
+    }
+}
+#afisha{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content:space-between;
+}
