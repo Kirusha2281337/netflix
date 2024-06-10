@@ -17,3 +17,7 @@
         );
         echo json_encode($return, JSON_HEX_TAG);
     }
+    $data = json_decode(file_get_contents('php://input'), true);
+    if($data == "destroy"){
+        session_destroy();
+    }
