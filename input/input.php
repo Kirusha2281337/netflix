@@ -40,9 +40,6 @@
 </body>
 </html>
 <?php
-session_start();
-    echo $_SESSION['login'];
-    echo $_SESSION['passl'];
     if(isset($_POST["name"])){
     //переменные
     $name = $_POST["name"];
@@ -62,7 +59,7 @@ session_start();
     if(!move_uploaded_file($img['tmp_name'], "$rootDir/uploads/".$fileName)){echo "Ошибка загрузки";}
     $img = "uploads/$fileName";
     //подключение и отправка
-    $conn = new mysqli("localhost", "root", "", "netflix");
+    include '../shortcuts/bdcon.php';
     $sql = "INSERT INTO afisha (name, date_show, description, age, genre, price, photo) 
         VALUES ('$name', '$dateshow', '$description', '$age', '$genre', '$price', '$img')";
     if ($conn -> query($sql)) {echo "<p>Данные успешно добавлены в бд</p>";} 

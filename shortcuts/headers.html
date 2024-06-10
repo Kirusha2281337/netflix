@@ -25,7 +25,29 @@ header{
     }
 }
 </style>
+
+<script>
+    fetch("../session.php")
+        .then((response) =>{
+            if(!response.ok){
+                throw new Error("Ничего не работает!")
+                
+            }
+            return response.json()
+        })
+        .then((data) =>{
+            if(data['users_role'] == 'adm'){
+                but_trans = document.getElementById('but_trans')
+                but_trans.textContent = "Input"
+                but_trans.href = "../input/input.php"
+            }
+            but_account = document.getElementById('but_account')
+            but_account.textContent = 'Account'
+            // but_account.href = ''
+        })
+    
+</script>
 <a href="../about/about.html"><img src="../resources/227_Netflix_logo-512.webp" alt="logo"></a>
 <a href="../afisha/afisha.html">Afisha</a>
 <a id="but_trans" href="../about/about.html">About</a>
-<a href="../auth/login.html">Account</a> 
+<a id="but_account" href="../auth/login.html">Login</a>

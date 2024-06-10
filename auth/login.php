@@ -14,11 +14,15 @@
         {
             echo "Вы вошли";
             $_SESSION['id'] = $row['id'];
+            sleep(1);
+            header('Location: ../about/about.html');
         }
         else
         {
             echo "Анлаки вы не вошли" . mysqli_error($conn);
             unset($_SESSION['id']);
+            sleep(1);
+            header('Location: ../about/about.html');
         }
     }
     else{
