@@ -14,7 +14,6 @@
 </head>
 <body>
     <header id="header"></header>
-    <button id="sort_btn">Сортировка</button>
     <form method="POST" enctype="multipart/form-data">
         <h3>Пополнение бд афишы</h3>
         <input type="text" name="name" placeholder="Название">
@@ -34,7 +33,7 @@
             ?>
         </select>
         <input type="text" name="price" placeholder="Цена">
-        <input type="file" name="image" placeholder="Постер" accept="image/*">
+        <label>Постер:<BR><input type="file" name="image" accept="image/*"></label>
         <input type="submit" value="Отправить">
     </form>
 </body>

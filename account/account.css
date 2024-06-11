@@ -8,11 +8,14 @@
 }
 body{
     background-color: rgb(24, 26, 27);
+    margin: 0 5vw;
 }
 main{
     width: fit-content;
     margin: auto;
     display: flex;
-    flex: column;
-    
+    flex-direction: column;
+    button{
+        color: black;
+    }
 }
