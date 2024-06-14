@@ -16,8 +16,10 @@ async function sort_post(formattedFormData){
     })
 
     btn_movie = document.querySelectorAll('.btn_movie')
+    btn_buy = document.querySelectorAll('.btn_buy')
     card = document.querySelectorAll('.card')
     data.rows_afisha.forEach((element, i) => {
+        card[i].id = "card_"+element['id']
         document.querySelectorAll('.img')[i].src = '../'+element['photo']
         document.querySelectorAll('.name')[i].textContent = element['name']
         document.querySelectorAll('.date')[i].innerHTML = "Дата показа: "+element['date_show']
@@ -25,7 +27,8 @@ async function sort_post(formattedFormData){
         document.querySelectorAll('.genre')[i].innerHTML = "Жанр: "+element['genre']
         document.querySelectorAll('.description')[i].innerHTML = "Синопсис: "+element['description']
         document.querySelectorAll('.price')[i].innerHTML = "Цена: "+element['price']+"₽"
-        btn_movie[i].id = element['id']
+        btn_movie[i].id = "btn_movie_"+element['id']
+        btn_buy[i].id = "btn_buy_"+element['id']
     })
     btn_movie.forEach((element, i) => {
         element.addEventListener('click', () => {
@@ -33,6 +36,22 @@ async function sort_post(formattedFormData){
 
             if(card[i].classList.contains('card_full')){
                 element.textContent = 'Закрыть';
+            }
+            else{
+                element.textContent = 'Открыть';
+            }
+        })
+    })
+
+    btn_buy.forEach((element, i) => {
+        element.addEventListener('click', () => {
+            if(confirm('Купить '+data.rows_afisha[i]['name']+' '+data.rows_afisha[i]['price']+'₽?')){
+                fetch("afisha.php",{
+                    method: 'POST',
+                    body: JSON.stringify(data.rows_afisha[i]['id'])
+                    }
+                )
+                alert('Куплено!')
             }
         })
     })
@@ -48,7 +67,5 @@ entform.addEventListener('click', function(event){
         sel: form.sel_sort.value,
         chck_desc: form.chck_desc.checked
     }
-    sort_post(formattedFormData).then(() => {
-        document.querySelector('card_full').toggle('card_full')
-    })
+    sort_post(formattedFormData)
 })

@@ -7,6 +7,7 @@
         $result_session = $conn -> query($sql) or die(mysqli_error($conn));
         $row_session = mysqli_fetch_array($result_session, MYSQLI_ASSOC);
         $return = array(
+        "users_id" => $row_session['id'],
         "users_name" => $row_session['name'],
         "users_surname" => $row_session['surname'],
         "users_patronymic" => $row_session['patronymic'],

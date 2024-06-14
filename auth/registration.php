@@ -12,7 +12,9 @@
         $sql = "INSERT INTO users (name, surname, patronymic, login, email, pass)
             VALUES('$name', '$surname', '$patronymic', '$login', '$email', '$pass')";
         if ($conn->query($sql) == TRUE) {
-            echo "Новая запись создана";
+            echo "Вы зарегистрировались";
+            sleep(1);
+            header('Location: login.html');
         }
         else{
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);

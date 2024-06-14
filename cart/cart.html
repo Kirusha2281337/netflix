@@ -10,23 +10,11 @@
             $("#header").load("../shortcuts/headers.html"); 
         });
     </script>
-    <link rel="stylesheet" href="afisha.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <header id="header"></header>
 
-    <div class="sort">
-        <h3 style="text-align: center;">Получить список с сортировкой по:</h3>
-        <form action="" id="sort_form">
-            <select name="sel_sort">
-                <option value="name">имени</option>
-                <option value="date">дате показа</option>
-                <option value="price">цене</option>
-            </select>
-            <label><input type="checkbox" name="chck_desc">убыванию</label>
-            <input type="submit" id="ent">
-        </form>
-    </div>
     <div id="afisha"></div>
 
     <template id="tmplt_afisha">
@@ -45,6 +33,6 @@
         </div>
     </template>
     
-    <script src="afisha.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>
